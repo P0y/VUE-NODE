@@ -1,27 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <router-link :to="{ name: 'HelloWorld'}">Back</router-link>
-      <router-link :to="{ name: 'ShowUsers'}">Show Users</router-link>
-    </div>
-    <router-view/>
+      <PoyHeader />
+    <router-view></router-view>
+    <PoyFooter />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+    import PoyHeader from "@/components/PoyHeader";
+    import PoyFooter from "@/components/PoyFooter";
+
+    export default {
+        name: "App",
+        components: {
+            PoyHeader,
+            PoyFooter
+        }
+    };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    background-color: #fffff5;
+  }
+  #introduction {
+    background-color: whitesmoke;
+  }
 </style>
