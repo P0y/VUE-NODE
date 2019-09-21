@@ -6,7 +6,7 @@
             EKIN
           </router-link>
         </div>
-        <div class="col-lg-9 d-flex justify-content-around align-self-center" id="other-link">
+        <div class="col-lg-9 d-flex justify-content-lg-end" id="other-link">
           <LoginForm />
         </div>
       </div>
@@ -23,17 +23,14 @@
 </script>
 <style>
   #main-link {
-    border: 1px solid #000000;
     background-color: deepskyblue;
-    padding: 10px;
+    padding: 28.5px;
+    font-style: italic;
+    font-weight: 600;
+    font-family: inherit;
   }
   #other-link {
-    border-radius: 13px 13px 13px 13px;
-    -moz-border-radius: 13px 13px 13px 13px;
-    -webkit-border-radius: 13px 13px 13px 13px;
-    border: 1px solid #000000;
-
     background-color: deepskyblue;
-    padding: 2px;
+    padding-right: 150px;
   }
 </style>
