@@ -1,17 +1,32 @@
 <template>
   <div class="home-introduction">
-    <h1>HOME INTRODUCTION</h1>
-    <span>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mi mauris, convallis efficitur lorem quis, venenatis consectetur nunc. Vivamus metus est, maximus quis pretium quis, ullamcorper ac nulla. Maecenas sem nisl, sodales et fringilla sed, malesuada eget neque. Nulla elementum egestas lectus, quis commodo sapien imperdiet nec. Suspendisse vitae purus sit amet nulla hendrerit volutpat. Cras lobortis congue lorem ac efficitur. Vestibulum euismod imperdiet augue, non interdum felis maximus vitae. Cras consectetur tortor consectetur, sodales ligula eu, vulputate sapien. Suspendisse mi purus, egestas vel orci in, tempus feugiat ligula. In quis eros posuere, scelerisque est vel, euismod metus. Fusce a mollis lorem. Ut justo nulla, faucibus ornare mi non, pulvinar volutpat purus. Suspendisse nec lorem neque. Mauris dapibus semper diam, volutpat facilisis nisi tristique id.
-
-Sed sit amet leo pretium, lacinia sapien et, blandit est. Integer eu ipsum maximus, ornare lorem ac, iaculis sem. Nunc iaculis massa dignissim ipsum malesuada, eu facilisis neque venenatis. Suspendisse efficitur scelerisque ante, at pellentesque nulla dapibus nec. Nunc auctor nulla id tincidunt varius. Ut semper sapien purus, sed vestibulum ipsum accumsan eu. In hac habitasse platea dictumst. Mauris vel sodales ipsum.
-
-Integer sit amet quam suscipit, tempus velit in, consequat elit. Sed blandit dui vel sapien pellentesque condimentum. Mauris varius eros quam, a viverra magna euismod vel. Morbi nec justo ac quam gravida vehicula quis et arcu. Donec sagittis turpis sit amet eros semper dignissim. Pellentesque interdum sit amet orci posuere hendrerit. Sed enim turpis, feugiat id tortor tempor, iaculis vestibulum magna. Donec non laoreet sapien. Cras aliquam orci massa, sed sodales nunc euismod sed. Curabitur feugiat maximus ornare.
-
-Duis sed augue vel est pharetra egestas at sit amet risus. Integer at convallis urna. Curabitur iaculis accumsan odio et vulputate. Nulla facilisi. Maecenas nec malesuada tellus. Quisque eu tellus at purus congue congue. Quisque non faucibus tellus. Aenean consequat euismod leo. Vestibulum leo turpis, commodo quis elit nec, varius gravida lorem. Mauris felis nulla, iaculis et dolor non, laoreet egestas elit. Nam rhoncus augue nec nibh tincidunt, sit amet eleifend lorem tempus. Maecenas turpis est, tristique eu mauris sit amet, bibendum pellentesque dui. Proin tempus dolor lorem.
-
-Etiam euismod nec metus ac laoreet. Donec ultrices fermentum dolor at vestibulum. Curabitur augue ex, tincidunt posuere justo eget, posuere facilisis mi. Quisque at nisl at nunc auctor pharetra. Fusce id lectus sit amet justo molestie faucibus. Sed eget dui eget est pulvinar interdum. Integer ac maximus dui, vel molestie mauris. Praesent ac ultricies dolor, non maximus est. In suscipit nulla sed enim egestas feugiat. Maecenas quis ex porta, pretium lacus quis, fringilla risus. Suspendisse sapien orci, condimentum quis ullamcorper at, pellentesque et odio.
-    </span>
+    <div class="row justify-content-lg-center" style="font-family: inherit">
+      <div class="col-lg-6 text-white" style="padding-bottom: 100px">
+        <h1>Retrouver vos tournois favoris<br> ici tout les jours</h1>
+      </div>
+    </div>
+    <div class="form-row text-white" style="padding-left: 50px">
+      <div class="form-group col-md-6 justify-content-md-around">
+        <label for="inputName">Name</label>
+        <input type="text" class="form-control" id="inputName">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputCategorie">Categorie</label>
+        <select id="inputCategorie" class="form-control">
+          <option selected="">Select categorie</option>
+          <option>SPORT</option>
+          <option>FPS</option>
+          <option>RPG</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2" style="padding-top: 35px">
+        <label class="buttonSearch" id="loginbutton" for="u_0_2">
+        </label>
+          <input class="button btn btn-sm" style="padding-top: 5px; font-size: 9px" value="Rechercher"
+                 aria-label="Se connecter" data-testid="royal_login_button" type="submit" id="u_0_2"
+          >
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -22,3 +37,45 @@ Etiam euismod nec metus ac laoreet. Donec ultrices fermentum dolor at vestibulum
         }
     };
 </script>
+<style>
+  .home-introduction {
+    align-content: center;
+    padding-top: 150px;
+    background-image: url("../../assets/ESL-Background-esport.jpg");
+  }
+  .button {
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 5px;
+    letter-spacing: 4px;
+    position: relative;
+    background-color: #010605;
+    border: solid;
+    color: #fff;
+    padding: 5px;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #193047;
+    border-radius: 4px;
+  }
+
+  .button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #1abc9c;
+    color: #000;
+  }
+
+  .button:after {
+    content: "";
+    background: #1abc9c;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+</style>

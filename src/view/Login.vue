@@ -46,7 +46,7 @@
   td.login_form_label_field :nth-child(1n) {
     font-size: 12px;
     font-family: inherit;
-    color: #353535;
+    color: #fffff5;
     text-decoration: none;
   }
   label.login_form_login_button {
@@ -59,8 +59,8 @@
     font-size: 5px;
     letter-spacing: 4px;
     position: relative;
-    background-color: #00bfff;
-    border: none;
+    background-color: #010605;
+    border: solid;
     color: #fff;
     padding: 5px;
     transition-duration: 0.4s;
