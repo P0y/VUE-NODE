@@ -9,12 +9,16 @@
 <script>
     import PoyHeader from "@/components/PoyHeader";
     import PoyFooter from "@/components/PoyFooter";
+    import Home from "./view/Home";
+    import Profile from "./view/Profile";
 
     export default {
         name: "App",
         components: {
             PoyHeader,
-            PoyFooter
+            PoyFooter,
+            Home,
+            Profile
         }
     };
 </script>

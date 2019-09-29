@@ -8,20 +8,35 @@
           <router-link class="navbar-brand text-white" :to="{ name: 'homeIntroduction' }" style="padding-top: 35px">
             Introduction
           </router-link>
-          <router-link class="navbar-brand text-white" :to="{ name: 'homePicture' }" style="padding-top: 35px">
-            Picture
+          <router-link class="navbar-brand text-white" :to="{ name: 'homeTournament' }" style="padding-top: 35px">
+            Tournament
           </router-link>
-          <LoginForm />
+          <LoginForm v-if="this.user.isLoggedIn === false" class="loginDesktop"/>
+          <button v-if="this.user.isLoggedIn === false" class="loginMobile">HERE MOBILE</button>
+          <router-link v-if="this.user.isLoggedIn === true" class="navbar-brand text-white" :to="{ name: 'profile' }" style="padding-top: 35px">
+            <i class="fa fa-user"></i> Profile
+          </router-link>
+          <Loggout v-if="this.user.isLoggedIn === true" />
         </div>
       </div>
     </div>
 </template>
 <script>
     import LoginForm from "@/view/Login";
+    import Profile from "@/view/Profile";
+    import Loggout from "./Loggout";
+
     export default {
         name: "poyHeader",
         components: {
-            LoginForm
+            Loggout,
+            LoginForm,
+            Profile
+        },
+        computed: {
+            user() {
+                return this.$store.state.user
+            }
         }
     };
 </script>
@@ -44,5 +59,19 @@
     width:100vw;      /* take up the full browser width */
     z-index:200;  /* high z index so other content scrolls underneath */
     height:100px;     /* define height for content */
+  }
+  .loginMobile {
+    display: none;
+  }
+  @media all and (max-width: 1024px)
+  {
+    .loginDesktop
+    {
+      display: none;
+    }
+    .loginMobile
+    {
+      display: block;
+    }
   }
 </style>

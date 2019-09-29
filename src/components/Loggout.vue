@@ -1,0 +1,67 @@
+<template>
+  <div class="loggout" style="padding-top: 35px">
+    <button type="button" @click="loggout" class="button btn"><i class="fa fa-sign-out"> Log out</i></button>
+  </div>
+</template>
+<script>
+  import { LOGGOUT } from "../store/actions.type";
+
+  export default {
+        name: "loggout",
+        components: {
+
+        },
+        methods: {
+            loggout: function () {
+                this.$store.dispatch(LOGGOUT, {}).then(() => this.$router.push('/'))
+            }
+        }
+    };
+</script>
+<style>
+  .button {
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 4px;
+    position: relative;
+    background-color: #010605;
+    border: solid;
+    color: #fff;
+    transition-duration: 0.4s;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #193047;
+    border-radius: 4px;
+  }
+
+  .button:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #1abc9c;
+    color: #000;
+  }
+
+  .button:after {
+    content: "";
+    background: #1abc9c;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  .button:focus {
+    outline: 0;
+  }
+</style>

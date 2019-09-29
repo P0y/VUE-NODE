@@ -6,12 +6,15 @@
       <td class="login_form_header_label"><label for="pass">Mot de passe</label></td>
     </tr>
     <tr>
-      <td><input type="email" class="login_form_input_box" name="email" id="email" data-testid="royal_email">
+      <td><input type="email" class="login_form_input_box" v-model="email" name="email" id="email"
+                 data-testid="royal_email">
       </td>
-      <td><input type="password" class="login_form_input_box" name="pass" id="pass" data-testid="royal_pass">
+      <td><input type="password" class="login_form_input_box" v-model="pass" name="pass" id="pass"
+                 data-testid="royal_pass">
       </td>
       <td><label class="login_form_login_button" id="loginbutton" for="u_0_2"><input
-        class="button btn btn-sm" style="padding-top: 5px; font-size: 9px" value="Connexion" aria-label="Se connecter" data-testid="royal_login_button" type="submit" id="u_0_2"></label>
+        class="button btn btn-sm" style="padding-top: 5px; font-size: 9px" value="Connexion" aria-label="Se connecter"
+        data-testid="royal_login_button" @click="login" type="submit" id="u_0_2"></label>
       </td>
     </tr>
     <tr>
@@ -25,10 +28,28 @@
   </table>
 </template>
 <script>
+  import {LOGIN} from '../store/actions.type'
+
     export default {
         name: "login",
-        components: {
-
+        components: {},
+        data() {
+            return {
+                pass: "",
+                email: ""
+            }
+        },
+        computed: {
+            user() {
+                return this.$store.state.user
+            },
+        },
+        methods: {
+            login: function () {
+                const email = this.email
+                const pass = this.pass
+                this.$store.dispatch(LOGIN, { email, pass }).then(() => this.$router.push('/'))
+            }
         }
     };
 </script>
@@ -43,15 +64,18 @@
     font-weight: normal;
     font-size: 12px;
   }
+
   td.login_form_label_field :nth-child(1n) {
     font-size: 12px;
     font-family: inherit;
     color: #fffff5;
     text-decoration: none;
   }
+
   label.login_form_login_button {
     margin-bottom: 0;
   }
+
   .button {
     text-align: center;
     text-transform: uppercase;
@@ -95,5 +119,7 @@
     transition: 0s
   }
 
-  .button:focus { outline:0; }
+  .button:focus {
+    outline: 0;
+  }
 </style>

@@ -22,9 +22,9 @@
       <div class="form-group col-md-2" style="padding-top: 35px">
         <label class="buttonSearch" id="loginbutton" for="u_0_2">
         </label>
-          <input class="button btn btn-sm" style="padding-top: 5px; font-size: 9px" value="Rechercher"
-                 aria-label="Se connecter" data-testid="royal_login_button" type="submit" id="u_0_2"
-          >
+        <input class="button btn btn-sm" style="padding-top: 5px; font-size: 9px" value="Rechercher"
+               aria-label="Se connecter" data-testid="royal_login_button" type="submit" id="u_0_2"
+        >
       </div>
     </div>
   </div>
@@ -32,8 +32,11 @@
 <script>
     export default {
         name: "homeIntroduction",
-        components: {
-
+        components: {},
+        computed: {
+            count() {
+                return this.$store.state.count
+            }
         }
     };
 </script>
@@ -43,6 +46,7 @@
     padding-top: 150px;
     background-image: url("../../assets/ESL-Background-esport.jpg");
   }
+
   .button {
     text-align: center;
     text-transform: uppercase;
