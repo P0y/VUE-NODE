@@ -9,11 +9,11 @@
 </template>
 <script>
     import HomeIntroduction from "./home/HomeIntroduction";
-    import HomePicture from "./home/HomePicture";
+    import HomeTournament from "./home/HomeTournament";
 
     export default {
         components: {
-            HomePicture,
+            HomeTournament,
             HomeIntroduction
         }
     }
